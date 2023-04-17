@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
+  Future<void> printReceipt() async {
     bool? connected = await MobiiotPrinter.bindingPrinter();
     debugPrint(connected.toString());
     if(connected == true) {
@@ -65,7 +65,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: TextButton(child: Text("print"), onPressed: () => initPlatformState(),)
+          child: TextButton(child: Text("print"), onPressed: () => printReceipt(),)
         ),
       ),
     );
